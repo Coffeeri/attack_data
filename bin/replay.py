@@ -45,7 +45,7 @@ class DataManipulation:
         difference = now - latest_event
         f.close()
 
-        for line in fileinput.input(path, inplace=True):
+        for line in fileinput.input(file_path, inplace=True):
             d = json.loads(line)
             original_time = datetime.strptime(d["CreationTime"],"%Y-%m-%dT%H:%M:%S")
             new_time = (difference + original_time)
